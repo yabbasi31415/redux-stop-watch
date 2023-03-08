@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import {useSelector, useDispatch} from 'react-redux';
 import {  incrementCount } from '../reducer';
 import { formatTime } from "../utils/utils";
+import * as styles from "./styles";
 
 export const Clock = () => {
 
@@ -30,7 +31,7 @@ export const Clock = () => {
       <>
         <p>
           {hrs}:{min}:{sec}.{ms % 10}
-          <span className="subscript-timer">{ms % 100}</span>
+          <styles.Subscript>{ms % 100}</styles.Subscript>
         </p>
       </>
     );
@@ -41,15 +42,15 @@ export const Clock = () => {
     const clicked = useSelector (state => state.stopwatch.clicked);
   
     if (clicked === "none")
-      return <p className="secondary-display">SPLIT TIME</p>;
+      return <styles.MiniDisplay>SPLIT TIME</styles.MiniDisplay>;
   
     const { hrs, min, sec, ms } = formatTime(timeCount);
   
     return (
       <>
-        <p className="secondary-display">
+        <styles.MiniDisplay>
           {hrs}:{min}:{sec}.{ms % 1000}
-        </p>
+        </styles.MiniDisplay>
       </>
     );
   }

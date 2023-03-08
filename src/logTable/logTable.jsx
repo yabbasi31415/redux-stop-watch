@@ -1,5 +1,5 @@
-import '../app/App.css';
 import {useSelector} from 'react-redux';
+import * as styles from "./styles";
 
 export function LogTable() {
     const newLogEntry = useSelector (state => state.stopwatch.newLogEntry);
@@ -7,21 +7,21 @@ export function LogTable() {
   
     return (
       <>
-        <div className="grid-container">
+        <styles.Grid>
           {newLogEntry.map((newLogEntry, index) => (
             <>
-              <div className="grid-item" key={logIndex}>
+              <styles.GridEntry key={logIndex}>
                 {newLogEntry.id}
-              </div>
-              <div className="grid-item" key={newLogEntry.clock}>
+              </styles.GridEntry>
+              <styles.GridEntry key={newLogEntry.clock}>
                 {newLogEntry.clock}
-              </div>
-              <div className="grid-item" key={newLogEntry.event + toString(logIndex)}>
+              </styles.GridEntry>
+              <styles.GridEntry key={newLogEntry.event + toString(logIndex)}>
                 {newLogEntry.event}
-              </div>
+              </styles.GridEntry>
             </>
           ))}
-        </div>
+        </styles.Grid>
       </>
     );
   }
