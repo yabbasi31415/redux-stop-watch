@@ -23,7 +23,7 @@ export const Clock = () => {
   };
 
   function SetDisplay() {
-   const timeCount = useSelector (state => state.counter.timeCount);
+   const timeCount = useSelector (state => state.stopwatch.timeCount);
     const { hrs, min, sec, ms } = formatTime(timeCount);
   
     return (
@@ -37,8 +37,8 @@ export const Clock = () => {
   }
   
   function SetMiniDisplay() {
-    const timeCount = useSelector (state => state.counter.timeCount);
-    const clicked = useSelector (state => state.counter.clicked);
+    const timeCount = useSelector (state => state.stopwatch.timeCount);
+    const clicked = useSelector (state => state.stopwatch.clicked);
   
     if (clicked === "none")
       return <p className="secondary-display">SPLIT TIME</p>;

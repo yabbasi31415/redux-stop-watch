@@ -2,8 +2,8 @@ import './App.css';
 import {useSelector} from 'react-redux';
 
 export function LogTable() {
-    const newLogEntry = useSelector (state => state.counter.newLogEntry);
-    const logIndex = useSelector (state => state.counter.logIndex);
+    const newLogEntry = useSelector (state => state.stopwatch.newLogEntry);
+    const logIndex = useSelector (state => state.stopwatch.logIndex);
   
     return (
       <>

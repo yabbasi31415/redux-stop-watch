@@ -25,8 +25,8 @@ const initialState = {
   newLogEntry: [],
 };
 
-export const counterSlice = createSlice({
-  name: "counter",
+export const stopwatchSlice = createSlice({
+  name: "stopwatch",
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
@@ -71,10 +71,10 @@ export const counterSlice = createSlice({
 });
 
 export const { start, pause, split, reset, incrementCount } =
-  counterSlice.actions;
+stopwatchSlice.actions;
 
-export const selectCount = (state) => state.counter.value;
+export const selectCount = (state) => state.stopwatch.value;
 export const selectEvent = (state) => (event, prop) =>
-  state.counter.reset.class;
+  state.stopwatch.reset.class;
 
-export default counterSlice.reducer;
+export default stopwatchSlice.reducer;
