@@ -1,5 +1,5 @@
 {
-  "name": "bug-tracking",
+  "name": "redux-stop-watch",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
