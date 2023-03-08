@@ -1,9 +1,8 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {start, pause, split, reset} from './counterSlice';
-// import styles from './Counter.module.css';
+import {start, pause, split, reset} from './stopwatchReducer';
 
-export function Counter () {
+export function Buttons () {
   const startBtn = useSelector (state => state.stopwatch.start.id);
 
   const dispatch = useDispatch ();

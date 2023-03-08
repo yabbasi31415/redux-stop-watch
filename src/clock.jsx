@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import {useSelector, useDispatch} from 'react-redux';
-import {  incrementCount } from './features/counter/counterSlice';
+import {  incrementCount } from './stopwatchReducer';
 import { formatTime } from "./utils";
 
 export const Clock = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Counter} from './features/counter/Counter';
+import {Buttons} from './buttons';
 import {Clock} from './clock';
 import { LogTable } from "./logTable"
 import './App.css';
@@ -9,7 +9,7 @@ function App () {
     <div className="App">
       <header className="App-header">
         <Clock />
-        <Counter />
+        <Buttons />
         <LogTable />
       </header>
     </div>

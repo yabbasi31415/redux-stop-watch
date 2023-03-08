@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { formatTime, setTimeCount } from "../../utils";
+import { formatTime, setTimeCount } from "./utils";
 
 const initialState = {
   value: 0,
