@@ -1,7 +1,7 @@
 import React from 'react';
-import {Buttons} from './buttons';
-import {Clock} from './clock';
-import { LogTable } from "./logTable"
+import {Buttons} from '../buttons/buttons';
+import {Clock} from '../clock/clock';
+import { LogTable } from "../logTable/logTable";
 import './App.css';
 
 function App () {

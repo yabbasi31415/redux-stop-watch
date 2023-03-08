@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import {useSelector, useDispatch} from 'react-redux';
-import {  incrementCount } from './stopwatchReducer';
-import { formatTime } from "./utils";
+import {  incrementCount } from '../reducer';
+import { formatTime } from "../utils/utils";
 
 export const Clock = () => {
 

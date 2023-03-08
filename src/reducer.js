@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { formatTime, setTimeCount } from "./utils";
+import { formatTime, setTimeCount } from "./utils/utils";
 
 const initialState = {
   value: 0,
@@ -73,7 +73,7 @@ export const stopwatchSlice = createSlice({
 export const { start, pause, split, reset, incrementCount } =
 stopwatchSlice.actions;
 
-export const selectCount = (state) => state.stopwatch.value;
+// export const selectCount = (state) => state.stopwatch.value;
 export const selectEvent = (state) => (event, prop) =>
   state.stopwatch.reset.class;
 

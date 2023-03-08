@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {start, pause, split, reset} from './stopwatchReducer';
+import {start, pause, split, reset} from '../reducer';
 
 export function Buttons () {
   const startBtn = useSelector (state => state.stopwatch.start.id);
