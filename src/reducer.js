@@ -2,23 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 import { formatTime, setTimeCount } from "./utils/utils";
 
 const initialState = {
-  value: 0,
-  status: "idle",
+
   clicked: "none",
   timeCount: 0,
   start: {
     id: "Start",
-    class: "enable-start-btn",
-    isDisabled: false,
   },
   split: {
-    id: "Split",
-    class: "enable-split-btn",
     isDisabled: true,
   },
   reset: {
-    id: "Reset",
-    class: "enable-reset-btn",
     isDisabled: true,
   },
   logIndex: 0,
