@@ -11,5 +11,5 @@ export const GridEntry = styled.div`
   font-size: 20px;
 
   color: ${(props) =>
-    props.color ? (props.color === "Pause" ? "magenta" : "orange") : "gray"};
+    props.color ? (props.color === "Pause" ? "darkmagenta" : "darkorange") : "black"};
 `;

@@ -2,16 +2,16 @@ import React from "react";
 import { WatchButtons } from "../buttons/watchButtons";
 import { Clock } from "../clock/clock";
 import { LogTable } from "../logTable/logTable";
-import { App } from "./styles";
-import "./App.css";
+import { GlobalStyle } from "./styles";
 
 function StopWatch() {
   return (
-    <App>
+    <>
+      <GlobalStyle />
       <Clock />
       <WatchButtons />
       <LogTable />
-    </App>
+    </>
   );
 }
 
