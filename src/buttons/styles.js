@@ -13,19 +13,16 @@ export const Button = styled.button`
 `;
 
 export const Start = styled(Button)`
-  background-color: green;
+
+  background-color: ${props => (props.clicked==='Start') ? "green" : "purple"};
 `;
 
 export const Split = styled(Button)`
-  background-color: orange;
+  background-color: ${props => (props.disabledStatus===false) ? "orange" : "lightgray"};
 `;
 
 export const Reset = styled(Button)`
-  background-color: blue;
-`;
-
-export const Disabled = styled(Button)`
-  background-color: lightgray;
+  background-color: ${props => (props.disabledStatus===false) ? "blue" : "lightgray"};
 `;
 
 export const Div = styled.div`

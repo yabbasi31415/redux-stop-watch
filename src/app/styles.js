@@ -7,3 +7,6 @@ export const App = styled.div`
   margin-left: 20px;
   font-style: helvetica;
 `;
+
+
+//global styles

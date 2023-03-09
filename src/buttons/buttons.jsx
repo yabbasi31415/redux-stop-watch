@@ -1,37 +1,40 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { start, pause, split, reset } from "../reducer";
+import { start, pause, split, reset, selectEvent } from "../reducer";
 import * as styles from "./styles";
 
 export function Buttons() {
-  const startBtn = useSelector((state) => state.stopwatch.start.id);
+  const startBtnLabel = useSelector(selectEvent("start", "id"));
 
   const dispatch = useDispatch();
 
   return (
     <styles.Div>
       <styles.Start
+        clicked={startBtnLabel}
         id="start"
         onClick={() =>
-          startBtn === "Start" ? dispatch(start()) : dispatch(pause())
+          startBtnLabel === "Start" ? dispatch(start()) : dispatch(pause())
         }
-        disabled={useSelector((state) => state.stopwatch.start.isDisabled)}
+        disabled={false}
       >
-        {useSelector((state) => state.stopwatch.start.id)}
+        {startBtnLabel}
       </styles.Start>
 
       <styles.Split
+        disabledStatus={useSelector(selectEvent("split", "isDisabled"))}
         id="split"
         onClick={() => dispatch(split())}
-        disabled={useSelector((state) => state.stopwatch.split.isDisabled)}
+        disabled={useSelector(selectEvent("split", "isDisabled"))}
       >
         Split
       </styles.Split>
 
       <styles.Reset
+        disabledStatus={useSelector(selectEvent("reset", "isDisabled"))}
         id="reset"
         onClick={() => dispatch(reset())}
-        disabled={useSelector((state) => state.stopwatch.reset.isDisabled)}
+        disabled={useSelector(selectEvent("reset", "isDisabled"))}
       >
         Reset
       </styles.Reset>

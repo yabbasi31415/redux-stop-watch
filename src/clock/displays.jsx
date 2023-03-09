@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
 import { formatTime } from "../utils/utils";
 import * as styles from "./styles";
+import { selectStateProp } from "../reducer";
 
 export function MainDisplay() {
-  const timeCount = useSelector((state) => state.stopwatch.timeCount);
+  const timeCount = useSelector(selectStateProp("timeCount"));
   const { hrs, min, sec, ms } = formatTime(timeCount);
 
   return (
@@ -17,8 +18,8 @@ export function MainDisplay() {
 }
 
 export function SecondaryDisplay() {
-  const timeCount = useSelector((state) => state.stopwatch.timeCount);
-  const clicked = useSelector((state) => state.stopwatch.clicked);
+  const timeCount = useSelector(selectStateProp("timeCount"));
+  const clicked = useSelector(selectStateProp("clicked"));
 
   if (clicked === "none")
     return <styles.MiniDisplay>SPLIT TIME</styles.MiniDisplay>;

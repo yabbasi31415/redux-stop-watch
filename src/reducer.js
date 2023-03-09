@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { formatTime, setTimeCount } from "./utils/utils";
 
 const initialState = {
-
   clicked: "none",
   timeCount: 0,
   start: {
@@ -25,14 +24,12 @@ export const stopwatchSlice = createSlice({
   reducers: {
     start: (state) => {
       state.start.id = "Pause";
-      state.start.class = "enable-pause-btn";
       state.clicked = "start";
       state.split.isDisabled = false;
       state.reset.isDisabled = true;
     },
     pause: (state) => {
       state.start.id = "Start";
-      state.start.class = "enable-start-btn";
       state.clicked = "pause";
       state.split.isDisabled = true;
       state.reset.isDisabled = false;
@@ -64,10 +61,12 @@ export const stopwatchSlice = createSlice({
 });
 
 export const { start, pause, split, reset, incrementCount } =
-stopwatchSlice.actions;
+  stopwatchSlice.actions;
 
-// export const selectCount = (state) => state.stopwatch.value;
-export const selectEvent = (state) => (event, prop) =>
-  state.stopwatch.reset.class;
+export const selectEvent = (button, prop) => (state) =>
+  state.stopwatch[button][prop];
+
+export const selectStateProp = (prop) => (state) =>
+  state.stopwatch[prop];
 
 export default stopwatchSlice.reducer;
