@@ -1,43 +1,37 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { start, pause, split, reset, selectEvent } from "../reducer";
-import * as styles from "./styles";
+import { Button } from "./button";
+import {Div} from "./styles";
 
-export function Buttons() {
+export function WatchButtons() {
   const startBtnLabel = useSelector(selectEvent("start", "id"));
 
   const dispatch = useDispatch();
 
   return (
-    <styles.Div>
-      <styles.Start
-        clicked={startBtnLabel}
-        id="start"
+    <Div>
+      <Button
+        label={startBtnLabel}
         onClick={() =>
           startBtnLabel === "Start" ? dispatch(start()) : dispatch(pause())
         }
+        id={"start"}
         disabled={false}
-      >
-        {startBtnLabel}
-      </styles.Start>
-
-      <styles.Split
-        disabledStatus={useSelector(selectEvent("split", "isDisabled"))}
-        id="split"
+      />
+      <Button
+        label="Split"
         onClick={() => dispatch(split())}
+        id={"split"}
         disabled={useSelector(selectEvent("split", "isDisabled"))}
-      >
-        Split
-      </styles.Split>
+      />
 
-      <styles.Reset
-        disabledStatus={useSelector(selectEvent("reset", "isDisabled"))}
-        id="reset"
+      <Button
+        label="Reset"
         onClick={() => dispatch(reset())}
+        id={"reset"}
         disabled={useSelector(selectEvent("reset", "isDisabled"))}
-      >
-        Reset
-      </styles.Reset>
-    </styles.Div>
+      />
+    </Div>
   );
 }

@@ -1,20 +1,18 @@
-import React from 'react';
-import {Buttons} from '../buttons/buttons';
-import {Clock} from '../clock/clock';
-import {LogTable} from '../logTable/logTable';
-import * as styles from './styles'
-import "./App.css"
+import React from "react";
+import { WatchButtons } from "../buttons/watchButtons";
+import { Clock } from "../clock/clock";
+import { LogTable } from "../logTable/logTable";
+import { App } from "./styles";
+import "./App.css";
 
-function App () {
+function StopWatch() {
   return (
-    <styles.App>
-
+    <App>
       <Clock />
-      <Buttons />
+      <WatchButtons />
       <LogTable />
-
-    </styles.App>
+    </App>
   );
 }
 
-export default App;
+export default StopWatch;

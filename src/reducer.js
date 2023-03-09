@@ -20,7 +20,6 @@ const initialState = {
 export const stopwatchSlice = createSlice({
   name: "stopwatch",
   initialState,
-  // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     start: (state) => {
       state.start.id = "Pause";
