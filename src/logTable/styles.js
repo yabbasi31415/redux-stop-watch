@@ -9,4 +9,7 @@ export const Grid = styled.div`
 export const GridEntry = styled.div`
   text-align: center;
   font-size: 20px;
+
+  color: ${(props) =>
+    props.color ? (props.color === "Pause" ? "magenta" : "orange") : "gray"};
 `;

@@ -12,7 +12,7 @@ export function LogTable() {
         {newLogEntry.map((newLogEntry, index) => (
           <>
             <styles.GridEntry key={logIndex}>{newLogEntry.id}</styles.GridEntry>
-            <styles.GridEntry key={newLogEntry.clock}>
+            <styles.GridEntry color={newLogEntry.event} key={newLogEntry.clock}>
               {newLogEntry.clock}
             </styles.GridEntry>
             <styles.GridEntry key={newLogEntry.event + toString(logIndex)}>
